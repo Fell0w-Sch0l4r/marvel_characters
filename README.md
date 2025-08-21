@@ -13,7 +13,9 @@ A modern, production-ready REST API for managing Marvel characters, built with N
 ## 📦 Features
 
 -   Retrieve all Marvel heroes
--   Retrieve a single hero by MongoDB ID
+-   Retrieve a single hero by MongoDB ID or nickname
+-   Retrieve all Marvel villains
+-   Retrieve a single villain by MongoDB ID or nickname
 -   Clean, modular codebase with best practices
 -   Ready for deployment on Vercel or any Node.js platform
 
@@ -51,7 +53,7 @@ A modern, production-ready REST API for managing Marvel characters, built with N
 ### Get Hero by Nickname
 
 -   **Endpoint:** `GET https://marvel-characters-five-gamma.vercel.app/api/v1/heroes/:nickname`
--   **Description:** Returns a single hero by their MongoDB ObjectId.
+-   **Description:** Returns a single hero by their nickname.
 -   **Example:**
     -   `GET https://marvel-characters-five-gamma.vercel.app/api/v1/heroes/iron man`
 -   **Example Response:**
@@ -65,6 +67,59 @@ A modern, production-ready REST API for managing Marvel characters, built with N
             "realName": "Tony Stark",
             "nickname": "Iron Man",
             "description": "Bitten by a radioactive spider..."
+        }
+    }
+}
+```
+
+---
+
+### Get All Villains
+
+-   **Endpoint:** `GET https://marvel-characters-five-gamma.vercel.app/api/v1/villains/`
+-   **Description:** Returns a list of all Marvel villains.
+-   **Example Response:**
+
+```json
+{
+    "status": "success",
+    "results": 2,
+    "data": {
+        "villains": [
+            {
+                "_id": "662f1c2e7e1b2a001e8e4b1a",
+                "realName": "Norman Osborn",
+                "nickname": "Green Goblin",
+                "description": "Spider-Man's arch-nemesis."
+            },
+            {
+                "_id": "662f1c2e7e1b2a001e8e4b1b",
+                "realName": "Thanos",
+                "nickname": "Mad Titan",
+                "description": "Seeker of the Infinity Stones."
+            }
+        ]
+    }
+}
+```
+
+### Get Villain by Nickname
+
+-   **Endpoint:** `GET https://marvel-characters-five-gamma.vercel.app/api/v1/villains/:nickname`
+-   **Description:** Returns a single villain by their nickname.
+-   **Example:**
+    -   `GET https://marvel-characters-five-gamma.vercel.app/api/v1/villains/green goblin`
+-   **Example Response:**
+
+```json
+{
+    "status": "success",
+    "data": {
+        "villain": {
+            "_id": "662f1c2e7e1b2a001e8e4b1a",
+            "realName": "Norman Osborn",
+            "nickname": "Green Goblin",
+            "description": "Spider-Man's arch-nemesis."
         }
     }
 }
