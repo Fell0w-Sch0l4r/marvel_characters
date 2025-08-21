@@ -24,7 +24,7 @@ A modern, production-ready REST API for managing Marvel characters, built with N
 ### Get All Heroes
 
 -   **Endpoint:** `GET https://marvel-characters-five-gamma.vercel.app/api/v1/heroes/`
--   **Description:** Returns a list of all Marvel heroes.
+-   **Description:** Returns a list of Marvel heroes.
 -   **Example Response:**
 
 ```json
@@ -77,7 +77,7 @@ A modern, production-ready REST API for managing Marvel characters, built with N
 ### Get All Villains
 
 -   **Endpoint:** `GET https://marvel-characters-five-gamma.vercel.app/api/v1/villains/`
--   **Description:** Returns a list of all Marvel villains.
+-   **Description:** Returns a list of Marvel villains.
 -   **Example Response:**
 
 ```json
