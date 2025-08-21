@@ -1,9 +1,13 @@
 import express from "express";
 import { Hero } from "../types/Hero";
 
-
-
 const heroes: Hero[] = [
+    {
+        realName: "Carol Danvers",
+        nickname: "Capitã Marvel",
+        description:
+            "Uma das mulheres mais poderosas do universo após ter sido exposta ao poder de um cristal Kree. Com habilidades que incluem voo, projeção de energia e força sobre-humana, Carol Danvers se tornou uma das principais defensoras da Terra e do cosmos.",
+    },
     {
         realName: "Bruce Banner",
         nickname: "Hulk",
@@ -66,15 +70,14 @@ const heroes: Hero[] = [
     },
 ];
 
-
 const getHeroes = (req: express.Request, res: express.Response) => {
     res.status(200).json({
         status: "success",
         results: heroes.length,
         data: {
-            heroes
-        }
-        })
-}
+            heroes,
+        },
+    });
+};
 
-export {getHeroes}
+export { getHeroes };
