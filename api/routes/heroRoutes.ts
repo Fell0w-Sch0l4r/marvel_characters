@@ -1,5 +1,5 @@
 import express from "express";
-import { getHeroes } from "../controller/heroController";
+import { getHero, getHeroes } from "../controller/heroController";
 
 
 
@@ -11,5 +11,6 @@ const router = express.Router()
 // router.route("/:id").get(getTour).delete(deleteTour).patch(updateTour);
 // router.route("/").get(getAllTours).post(addTour);
 router.route('/').get(getHeroes)
+router.route('/:nickname').get(getHero)
 
 export default router;

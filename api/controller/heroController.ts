@@ -21,4 +21,23 @@ const getHeroes = async (req: express.Request, res: express.Response) => {
     
 };
 
-export { getHeroes };
+const getHero = async (req: express.Request, res: express.Response) => {
+    try {
+        const hero = await HeroModel.findOne({
+            nickname: { $regex: `^${req.params.nickname}`, $options: "i" },
+        });
+        res.status(200).json({
+            status: "success",
+            data: {
+                hero,
+            },
+        });
+    } catch (error) {
+        res.status(400).json({
+            status: "fail",
+            message: error,
+        });
+    }
+};
+
+export { getHeroes, getHero };
